@@ -39,11 +39,28 @@ Do NOT use this skill for:
 
 ---
 
+## Reference files
+
+Use these supporting files as part of the workflow:
+
+- `references/philosophy-checklist.md`
+  Use during Step 1 and Step 2 to structure the visual-system analysis and tone diagnosis.
+- `references/style-guide-template.md`
+  Use during Step 3 as the default output skeleton for the implementation-ready style guide.
+- `references/anti-patterns.md`
+  Use during Step 4 and Step 5 as a rejection checklist for generic, noisy, or emotionally incorrect decisions.
+
+If a reference file conflicts with the actual source UI, trust the source UI first and treat the reference file as scaffolding.
+
+---
+
 ## Core workflow
 
 Always work in this order.
 
 ### Step 1 — Recover the visual system
+Start by consulting `references/philosophy-checklist.md`.
+
 Study the reference and identify:
 
 - page width and layout rhythm
@@ -71,6 +88,8 @@ Always infer the **system**, not isolated decoration.
 ---
 
 ### Step 2 — Summarize the design philosophy
+Use `references/philosophy-checklist.md` to make sure the explanation covers layout rhythm, typography logic, container treatment, emotional tone, and conversion flow.
+
 Write a short explanation describing:
 
 - what makes the UI feel premium
@@ -84,6 +103,8 @@ This section should sound like a design systems review, not vague praise.
 ---
 
 ### Step 3 — Produce a concise style guide
+Use `references/style-guide-template.md` as the default structure unless the user requests a different format.
+
 Before coding, generate an implementation-ready guide with:
 
 - spacing tokens
@@ -106,6 +127,9 @@ Prefer **tokens and repeatable rules** over prose.
 ### Step 4 — Translate into code
 Map the style guide into the existing stack.
 
+Keep `references/anti-patterns.md` visible while implementing.
+If an implementation choice starts to feel flashy, generic, or template-like, reject it and return to the recovered system.
+
 Preferred order:
 1. layout skeleton
 2. typography hierarchy
@@ -121,6 +145,8 @@ Typography and spacing fidelity are higher priority than cosmetic effects.
 ---
 
 ### Step 5 — Review against the reference
+Use `references/anti-patterns.md` as a final review checklist before declaring the work complete.
+
 After implementation, explicitly compare:
 
 - what matches strongly
